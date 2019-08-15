@@ -1,0 +1,10 @@
+.contactForm{
+  display:flex;
+  flex-direction: column;
+  width: 60vw;
+  margin: 0 auto;
+}
+
+#submitButton{
+  width:100px
+}

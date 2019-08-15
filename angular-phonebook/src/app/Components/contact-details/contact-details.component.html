@@ -1,0 +1,21 @@
+
+<mat-card class = "detailsCard">
+  <img [src]="dummyAvatar" alt="avatar" class="avatar"/>
+  <div *ngIf = "contactDetails!==undefined">
+  <p>First Name:{{contactDetails.firstName}}</p>
+  <mat-divider></mat-divider>
+  
+  <p>Last Name:{{contactDetails.lastName}}</p>
+  <mat-divider></mat-divider>
+  
+  <p>Email:{{contactDetails.email}}</p>
+  <mat-divider></mat-divider>
+  
+  <p>phone number:{{contactDetails.phoneNumber}}</p>
+  <mat-divider></mat-divider>
+</div>
+  <button mat-button>Edit</button>
+  <button mat-button (click)="deleteContact()">Delete</button>
+  <!-- <p>First Name:</p>
+  <mat-divider></mat-divider> -->
+</mat-card>

@@ -1,0 +1,12 @@
+.avatar{
+  border: 1px solid black;
+  width:200px;
+  border-radius: 100%;
+  margin: 0 auto;
+}
+
+.detailsCard{
+  width:60vw;
+  margin:0 auto;
+  margin-top: 20vh
+}

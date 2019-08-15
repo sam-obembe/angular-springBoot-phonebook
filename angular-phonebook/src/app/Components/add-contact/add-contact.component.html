@@ -1,0 +1,32 @@
+
+
+<mat-card class="contactForm">
+    <p>Add contact details</p>
+<form [formGroup]="contactForm"  class="contactForm" (ngSubmit)="submitForm()">
+  <mat-form-field>
+    <input matInput placeholder="First Name" type="text" formControlName="firstName"/>
+  </mat-form-field><br>
+
+  <mat-form-field>
+    <input matInput placeholder="Last Name" type="text" formControlName="lastName"/>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="Email" type="text" formControlName="email"/>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="Phone Number" type="text" formControlName="phoneNumber"/>
+  </mat-form-field>
+
+  <button mat-raised-button id="submitButton" color="primary">Add Contact</button>
+
+</form>
+</mat-card>
+
+<!--
+<p>{{contactForm.value.firstName}}</p>
+<p>{{contactForm.value.lastName}}</p>
+<p>{{contactForm.value.email}}</p>
+<p>{{contactForm.value.phoneNumber}}</p>
+-->
