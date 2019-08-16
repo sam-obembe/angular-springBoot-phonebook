@@ -1,8 +1,17 @@
 .contactForm{
   display:flex;
   flex-direction: column;
+  /*width: 60vw;
+  margin: 0 auto;
+  margin-top:10vh;*/
+  /*padding:15px,0px,15px,0px;*/
+}
+
+.container{
   width: 60vw;
   margin: 0 auto;
+  margin-top:10vh;
+  padding:15px,
 }
 
 #submitButton{

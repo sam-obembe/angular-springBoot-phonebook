@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormGroup,FormControl} from '@angular/forms'
 import {ContactInfo} from '../../Models/contact-info'
 import {DummyContactService} from '../../Services/DummyContacts/dummy-contact.service'
+import { ContactService } from 'src/app/Services/Contacts/contact.service';
 
 @Component({
   selector: 'app-add-contact',
@@ -18,7 +19,7 @@ export class AddContactComponent implements OnInit {
   })
   contactDetails:ContactInfo
 
-  constructor(private contactService:DummyContactService) { 
+  constructor(private dummyContact:DummyContactService,private contactService:ContactService) { 
     
   }
 
@@ -27,7 +28,15 @@ export class AddContactComponent implements OnInit {
   }
 
   submitForm(){
+    //this.dummyContact.addContact(this.contactForm.value)
     this.contactService.addContact(this.contactForm.value)
+    this.contactForm.reset({
+      firstName:'',
+      lastName:'',
+      email:'',
+      phoneNumber:'',
+      avatar:''
+    })
   }
 
 }
