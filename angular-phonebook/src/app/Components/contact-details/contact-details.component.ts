@@ -13,13 +13,14 @@ export class ContactDetailsComponent implements OnInit {
   contactId:string;
   contactDetails:ContactInfo;
   dummyAvatar:string = "https://robohash.org/88.130.49.243.png"
+  showEditContact:boolean
+  
   constructor(private route:ActivatedRoute,private dummyContact:DummyContactService, private contactService:ContactService) { 
+
     this.route.paramMap.subscribe((activeRoute)=>{
-      console.log(activeRoute.get("id"))
       this.contactId = activeRoute.get("id")
     }
     )
-
     //this.contactDetails=this.dummyContact.getContactDetails(this.contactId)
     this.contactDetails = this.contactService.getContactDetails(this.contactId);
   }
@@ -32,5 +33,14 @@ export class ContactDetailsComponent implements OnInit {
     //this.dummyContact.deleteContact(this.contactId)
     this.contactService.deleteContact(this.contactId);
   }
+
+  toggleEdit(){
+    if(this.showEditContact===true){
+      this.showEditContact=false
+    }else{
+      this.showEditContact = true
+    }
+  }
+
 
 }

@@ -1,21 +1,22 @@
 
-<mat-card class = "detailsCard">
+
+<mat-card class = "detailsCard" *ngIf="!showEditContact">
   <img [src]="dummyAvatar" alt="avatar" class="avatar"/>
-  <div *ngIf = "contactDetails!==undefined">
-  <p>First Name:{{contactDetails.firstName}}</p>
-  <mat-divider></mat-divider>
-  
-  <p>Last Name:{{contactDetails.lastName}}</p>
-  <mat-divider></mat-divider>
-  
-  <p>Email:{{contactDetails.email}}</p>
-  <mat-divider></mat-divider>
-  
-  <p>phone number:{{contactDetails.phoneNumber}}</p>
-  <mat-divider></mat-divider>
-</div>
-  <button mat-button>Edit</button>
-  <a routerLink=""><button mat-button (click)="deleteContact()">Delete</button></a>
-  <!-- <p>First Name:</p>
-  <mat-divider></mat-divider> -->
+
+  <div *ngIf = "contactDetails!==undefined" class="details">
+    <p><strong>First Name</strong>: {{contactDetails.firstName}}</p>
+    <p><strong>Last Name</strong>: {{contactDetails.lastName}}</p>
+    <p><strong>Email</strong>: {{contactDetails.email}}</p>
+    <p><strong>phone number</strong>: {{contactDetails.phoneNumber}}</p>
+    <button mat-button (click)="toggleEdit()">Edit</button>
+    <a routerLink=""><button mat-button (click)="deleteContact()">Delete</button></a>
+
+  </div>
+
 </mat-card>
+
+<app-edit-contact *ngIf="showEditContact" (cancel)="toggleEdit()" [defaultDetails]="contactDetails" [id]="contactId"></app-edit-contact>
+
+  <!--
+    <mat-divider [ngClass]="divider"></mat-divider>
+  -->

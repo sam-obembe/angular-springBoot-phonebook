@@ -13,7 +13,7 @@ public class DataAccessService {
     private final DatabaseInterface database;
 
     @Autowired
-    public DataAccessService(@Qualifier("dummyDB") DatabaseInterface dummyDB){
+    public DataAccessService(@Qualifier("sqlDB") DatabaseInterface dummyDB){
         this.database = dummyDB;
     }
 

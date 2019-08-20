@@ -1,21 +1,21 @@
 
 
 <mat-card class="container">
-    <p>Add contact details</p>
+    <h2>Add contact details</h2>
 <form [formGroup]="contactForm"  class="contactForm" (ngSubmit)="submitForm()">
-  <mat-form-field>
+  <mat-form-field class = "formInput">
     <input matInput placeholder="First Name" type="text" formControlName="firstName"/>
   </mat-form-field><br>
 
-  <mat-form-field>
+  <mat-form-field class="formInput">
     <input matInput placeholder="Last Name" type="text" formControlName="lastName"/>
   </mat-form-field>
 
-  <mat-form-field>
+  <mat-form-field class="formInput">
     <input matInput placeholder="Email" type="text" formControlName="email"/>
   </mat-form-field>
 
-  <mat-form-field>
+  <mat-form-field class="formInput">
     <input matInput placeholder="Phone Number" type="text" formControlName="phoneNumber"/>
   </mat-form-field>
 

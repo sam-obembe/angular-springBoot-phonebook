@@ -1,13 +1,20 @@
-<mat-list *ngFor="let contact of contacts">
-  <mat-card>
-    <a routerLink="contact/{{contact.id}}">
-      <mat-list-item>
-        <img *ngIf="contact.avatar.length===0" matListAvatar [src]="dummyAvatar" alt="avatar"/>
-        {{contact.firstName}} {{contact.lastName}}
-        <!--
-        <button mat-mini-fab color="primary" >Details</button>
-        -->
-      </mat-list-item>
-    </a>
-  </mat-card>
-</mat-list>
+<div id="contactPage">
+
+
+  <h2>Contacts</h2>
+  <mat-list *ngFor="let contact of contacts" class="contactList">
+    
+    <mat-card>
+      <a routerLink="contact/{{contact.id}}">
+        <mat-list-item>
+          <img *ngIf="contact.avatar.length===0 || contact.avatar.length==null" matListAvatar [src]="dummyAvatar" alt="avatar"/>
+          {{contact.firstName}} {{contact.lastName}}
+          <!--
+          <button mat-mini-fab color="primary" >Details</button>
+          -->
+        </mat-list-item>
+      </a>
+    </mat-card>
+  </mat-list>
+
+</div>

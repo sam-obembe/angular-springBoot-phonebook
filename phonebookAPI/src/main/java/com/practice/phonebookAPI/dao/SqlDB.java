@@ -6,31 +6,37 @@ import org.springframework.stereotype.Repository;
 import java.util.ArrayList;
 import java.util.List;
 
-@Repository("dummyDB")
-public class DummyDB implements DatabaseInterface {
-    private List<Contact> contacts = new ArrayList<>();
+
+@Repository("sqlDB")
+public class SqlDB implements DatabaseInterface{
+    private SqlInterface sql;
+    public SqlDB(SqlInterface postgres){
+        this.sql=postgres;
+    }
+
     @Override
     public List<Contact> getContacts() {
-        return contacts;
+        List foundContacts = new ArrayList<Contact>();
+        Iterable contacts = this.sql.findAll();
+        contacts.forEach(person->foundContacts.add(person));
+        return foundContacts;
     }
 
     @Override
     public int addContact(Contact contact) {
-        contacts.add(contact);
-        return 1;
+        this.sql.save(contact);
+        return 0;
     }
 
     @Override
     public Contact editContact(Contact editedContact) {
-        System.out.print(editedContact.getId());
-        contacts.removeIf(e -> e.getId().equals(editedContact.getId()));
-        contacts.add(editedContact);
-        return editedContact;
+        return null;
     }
 
     @Override
     public int deleteContact(String id) {
-        contacts.removeIf(e->e.getId().equals(id));
+        this.sql.deleteById(id);
         return 1;
     }
+
 }

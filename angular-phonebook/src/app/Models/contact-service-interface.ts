@@ -6,5 +6,5 @@ export interface ContactServiceInterface {
   getContactDetails(id:string)
   addContact(details:ContactInfo)
   deleteContact(id:string)
-  editContact()
+  editContact(contact:ContactInfo)
 }

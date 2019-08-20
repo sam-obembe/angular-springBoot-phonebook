@@ -1,0 +1,22 @@
+<mat-card>
+  <form [formGroup]="editContactForm">
+    <mat-form-field>
+      <input matInput type="text" formControlName="firstName"/>
+    </mat-form-field><br>
+      
+    <mat-form-field>
+      <input matInput type="text" formControlName="lastName"/>
+    </mat-form-field><br>
+      
+    <mat-form-field>
+      <input matInput type="text" formControlName="email"/>
+    </mat-form-field><br>
+      
+    <mat-form-field>
+      <input matInput type="text" formControlName="phoneNumber"/>
+    </mat-form-field><br>
+
+  </form>
+  <button mat-raised-button (click) = "cancelEdit()">cancel edit</button>
+  <button mat-raised-button (click)="submitEdit()">Submit changes</button>
+</mat-card>

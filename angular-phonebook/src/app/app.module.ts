@@ -17,7 +17,8 @@ import {
   MatCardModule,MatListModule, MatDividerModule} from '@angular/material';
 
 import { ContactDetailsComponent } from './Components/contact-details/contact-details.component'
-import {DummyContactService} from './Services/DummyContacts/dummy-contact.service'
+import {DummyContactService} from './Services/DummyContacts/dummy-contact.service';
+import { EditContactComponent } from './Components/edit-contact/edit-contact.component'
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import {DummyContactService} from './Services/DummyContacts/dummy-contact.servic
     ContactPageComponent,
     AddContactComponent,
     NavBarComponent,
-    ContactDetailsComponent
+    ContactDetailsComponent,
+    EditContactComponent
   ],
   imports: [
     BrowserModule,

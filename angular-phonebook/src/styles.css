@@ -4,3 +4,7 @@
 body{
   background-color: #3a3a3a
 }
+
+h1,h2,h3{
+  font-family:'Roboto',sans-serif
+}

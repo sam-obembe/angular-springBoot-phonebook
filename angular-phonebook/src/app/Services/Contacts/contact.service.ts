@@ -45,8 +45,15 @@ export class ContactService implements ContactServiceInterface {
       }
     })
   }
-  editContact() {
-    throw new Error("Method not implemented.");
+  editContact(contact:ContactInfo) {
+    return this.http.put(this.apiEndPoint,contact).subscribe(res=>{
+      if(res==1){
+        console.log("success")
+        this.getContacts().subscribe((res:ContactInfo[])=>{
+          this.contacts=res
+        })
+      }
+    })
   }
 
  
